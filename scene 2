@@ -1,0 +1,259 @@
+ascore.text=score.toString();
+
+
+var fl_SecondsToCountDown_2:Number = 60;
+
+var fl_CountDownTimerInstance_2:Timer = new Timer(1000, fl_SecondsToCountDown_2);
+fl_CountDownTimerInstance_2.addEventListener(TimerEvent.TIMER, fl_CountDownTimerHandler_2);
+fl_CountDownTimerInstance_2.start();
+
+function fl_CountDownTimerHandler_2(event:TimerEvent):void
+{
+	trace(fl_SecondsToCountDown_2 + " seconds");
+	fl_SecondsToCountDown_2--;
+	atime.text=fl_SecondsToCountDown_2.toString();
+	
+	if (fl_SecondsToCountDown_2<=0) {
+		stage.frameRate = 0;
+		tscore.x=233
+		tscore.y=175
+		ascore.x=233
+		ascore.y=200
+		boxb.x=275
+		boxb.y=200
+	}
+}
+
+
+stage.addEventListener(Event.ENTER_FRAME,followBall);
+
+function followBall(event:Event):void {
+	var dx:int = abee.x - mouseX;
+	var dy:int = abee.y - mouseY;
+		abee.x -= dx / 5;
+		abee.y -= dy /5;	
+	var dx:int = bbee.x - mouseX;
+	var dy:int = bbee.y - mouseY;
+		bbee.x -= dx /10;
+		bbee.y -= dy /10;	
+}
+
+stage.addEventListener(Event.ENTER_FRAME, gameloop); 
+
+function gameloop(e:Event):void{ 
+	atree.x-=10; 
+		if (atree.x<-200){ 
+		atree.x=650;
+		}
+
+	btree.x-=10; 
+		if (btree.x<-400){ 
+		btree.x=800;
+		}
+		
+	ctree.x-=10; 
+		if (ctree.x<-300){ 
+		ctree.x=700;
+		}
+		
+	abush.x-=10; 
+		if (abush.x<-270){ 
+		abush.x=610;
+		}
+
+	bbush.x-=10; 
+		if (bbush.x<-270){ 
+		bbush.x=610;
+		}
+		
+	cbush.x-=10; 
+		if (cbush.x<-270){ 
+		cbush.x=610;
+		}
+		
+	acloud.x-=2; 
+		if (acloud.x<-200){ 
+		acloud.x=650;
+		}
+
+	bcloud.x-=2; 
+		if (bcloud.x<-400){ 
+		bcloud.x=800;
+		}
+		
+	ccloud.x-=2; 
+		if (ccloud.x<-300){ 
+		ccloud.x=700;
+		}
+	
+	aflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (aflwr.x<-300){ 
+		aflwr.x=600
+		aflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	bflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (bflwr.x<-300){ 
+		bflwr.x=600
+		bflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	cflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (cflwr.x<-300){ 
+		cflwr.x=600
+		cflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	dflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (dflwr.x<-300){ 
+		dflwr.x=600
+		dflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	eflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (eflwr.x<-300){ 
+		eflwr.x=600
+		eflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	fflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (fflwr.x<-300){ 
+		fflwr.x=600
+		fflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	gflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (gflwr.x<-300){ 
+		gflwr.x=600
+		gflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	hflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (hflwr.x<-300){ 
+		hflwr.x=600
+		hflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	iflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (iflwr.x<-300){ 
+		iflwr.x=600
+		iflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	jflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (jflwr.x<-300){ 
+		jflwr.x=600
+		jflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	kflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (kflwr.x<-300){ 
+		kflwr.x=600
+		kflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	lflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (lflwr.x<-300){ 
+		lflwr.x=600
+		lflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	mflwr.x-=Math.random() * (10 - 1) + 1; 
+		if (mflwr.x<-300){ 
+		mflwr.x=600
+		mflwr.y=Math.random() * (300 - 7) + 7;
+		}
+	
+	if (abee.hitTestObject(aflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(bflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(cflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(dflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(eflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(fflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(gflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(hflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(iflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(jflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(kflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(lflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (abee.hitTestObject(mflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(aflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(bflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(cflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(dflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(eflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(fflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(gflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(hflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(iflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(jflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(kflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(lflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+	if (bbee.hitTestObject(mflwr)) { 
+		score++; 
+		ascore.text=score.toString(); 
+		}
+}
