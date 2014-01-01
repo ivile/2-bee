@@ -1,3 +1,6 @@
+stop();
+
+var score=0; 
 ascore.text=score.toString();
 
 
@@ -21,6 +24,8 @@ function fl_CountDownTimerHandler_2(event:TimerEvent):void
 		ascore.y=200
 		boxb.x=275
 		boxb.y=200
+		playag.x=275
+		playag.y=307
 	}
 }
 
@@ -256,4 +261,11 @@ function gameloop(e:Event):void{
 		score++; 
 		ascore.text=score.toString(); 
 		}
+}
+
+playag.addEventListener(MouseEvent.CLICK, fl_ClickToGoToScene_2);
+
+function fl_ClickToGoToScene_2(event:MouseEvent):void
+{
+	gotoAndPlay(1, "Scene 1");
 }
