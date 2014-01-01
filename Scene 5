@@ -1,0 +1,8 @@
+stop();
+
+outbtn.addEventListener(MouseEvent.CLICK, fl_ClickToGoToScene);
+
+function fl_ClickToGoToScene(event:MouseEvent):void
+{
+	gotoAndPlay(1, "Scene 2");
+}
