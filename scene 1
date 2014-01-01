@@ -1,8 +1,8 @@
 stop();
 
-playbtn.addEventListener(MouseEvent.CLICK, fl_MouseClickHandler_2);
+play_btn.addEventListener(MouseEvent.CLICK, fl_ClickToGoToScene_3);
 
-function fl_MouseClickHandler_2(event:MouseEvent):void
+function fl_ClickToGoToScene_3(event:MouseEvent):void
 {
-	gotoAndStop(1, "Scene 2")
+	gotoAndPlay(1, "Scene 5");
 }
